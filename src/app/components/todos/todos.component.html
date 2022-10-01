@@ -1,9 +1,10 @@
 <search-todo (onSearch)="handleSearch($event)"></search-todo>
 <app-todo
-  *ngFor="let todo of todos"
+  *ngFor="let todo of resultTodos"
   [enterTodo]="todo"
   (onChange)="changeTodo($event)"
   (onDelete)="deleteTodo($event)"
 >
 </app-todo>
+<div *ngIf="resultTodos.length == 0" class="container">Nothing to show !</div>
 <add-todo (onSubmit)="addTodo($event)"></add-todo>

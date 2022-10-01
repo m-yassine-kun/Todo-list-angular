@@ -12,13 +12,14 @@ export class TodosComponent implements OnInit {
   
   constructor(private todoService: TodoService) { }
   todos:Todo[]=[]
-  searchTodos:Todo[]=[]
+  resultTodos:Todo[]=[]
   ngOnInit(): void {
-    this.todoService.getTodos(6).subscribe(todos=>{
-      this.todos=this.searchTodos=todos
+    this.todoService.getTodos().subscribe(todos=>{
+      this.resultTodos=this.todos=todos
 
     })
   }
+  
 
  
   changeTodo(todo:Todo){
@@ -37,7 +38,7 @@ export class TodosComponent implements OnInit {
 
   deleteTodo(todo:Todo){
      this.todoService.delete(todo.id).subscribe(() => {
-      this.todos = this.todos.filter(item => {
+      this.todos =this.resultTodos= this.todos.filter(item => {
         return item !== todo;
       });
     });
@@ -60,12 +61,11 @@ export class TodosComponent implements OnInit {
 
   handleSearch(search:string){
 
-    const todos: Todo[] =[...this.todos]
 
     
-      this.searchTodos=todos.filter((todo)=>{ todo.title.toLowerCase().includes(search.toLowerCase())} )
+      this.resultTodos=this.todos.filter((todo)=>todo.title.toLowerCase().includes(search.toLowerCase()) )
+      console.log(this.resultTodos);
       console.log(this.todos);
-      console.log(this.searchTodos);
     }
     
     

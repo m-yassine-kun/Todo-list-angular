@@ -8,13 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class TodoService {
 
-  baseURL="https://jsonplaceholder.typicode.com/todos"
+  baseURL="http://localhost:5000/todos"
   constructor(private http:HttpClient) { 
   }
 
-  getTodos(limit:number): Observable<Todo[]>{
+  getTodos(): Observable<Todo[]>{
     
-    return this.http.get<Todo[]>(this.baseURL+"?_limit="+limit)
+    return this.http.get<Todo[]>(this.baseURL)
   }
 
   delete(id:number){

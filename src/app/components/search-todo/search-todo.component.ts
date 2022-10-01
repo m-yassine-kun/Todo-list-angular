@@ -7,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class SearchTodoComponent implements OnInit {
 
-  searchText:String;
+  searchText:string;
   @Output("onSearch") submitEmitter=new EventEmitter();
   constructor() { }
 

@@ -1,3 +1,19 @@
 {
-  "todos": []
+  "todos": [
+    {
+      "title": "Welcoming users!",
+      "completed": false,
+      "id": 1
+    },
+    {
+      "title": "A warm and enthusiastic welcome to you, [name]. You're here because we believe in who you are and what you have to contribute",
+      "completed": true,
+      "id": 2
+    },
+    {
+      "title": "add edit",
+      "completed": false,
+      "id": 3
+    }
+  ]
 }

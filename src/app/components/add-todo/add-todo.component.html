@@ -1,12 +1,18 @@
 <form (ngSubmit)="handleSubmit()">
-  <input
-    class="form-control"
-    placeholder="Describe your task..."
-    type="text"
-    [(ngModel)]="taskTitle"
-    name="tasktilte"
-  />
+  <div class="row">
+    <div class="col-10">
+      <input
+        class="form-control"
+        placeholder="Describe your task..."
+        type="text"
+        [(ngModel)]="taskTitle"
+        name="tasktilte"
+      />
+    </div>
+    <div class="col-2">
+      <button class="btn btn-success btn" type="submit">add</button>
+    </div>
+  </div>
   <br />
   <p *ngIf="taskTitle">The task "{{ taskTitle }}" will be added</p>
-  <button class="btn btn-success btn-sm" type="submit">add</button>
 </form>

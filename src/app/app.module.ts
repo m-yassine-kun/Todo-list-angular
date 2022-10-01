@@ -7,13 +7,15 @@ import { TodosComponent } from './components/todos/todos.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { AddTodoComponent } from './components/add-todo/add-todo.component';
 import { FormsModule } from '@angular/forms';
+import { SearchTodoComponent } from './components/search-todo/search-todo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodosComponent,
     TodoComponent,
-    AddTodoComponent
+    AddTodoComponent,
+    SearchTodoComponent
   ],
   imports: [
     BrowserModule,

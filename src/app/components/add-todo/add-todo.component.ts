@@ -17,7 +17,7 @@ export class AddTodoComponent implements OnInit {
   }
 
   handleSubmit(){
-    const newTodo:Todo = new Todo(5,this.taskTitle,false)
+    const newTodo:Todo = new Todo(this.taskTitle,false)
     this.submitEmitter.emit(newTodo)
     this.taskTitle=""
   }

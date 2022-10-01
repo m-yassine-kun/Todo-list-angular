@@ -8,20 +8,25 @@ import { Observable } from 'rxjs';
 })
 export class TodoService {
 
+  baseURL="https://jsonplaceholder.typicode.com/todos"
   constructor(private http:HttpClient) { 
   }
 
   getTodos(limit:number): Observable<Todo[]>{
     
-    return this.http.get<Todo[]>("https://jsonplaceholder.typicode.com/todos?_limit="+limit)
+    return this.http.get<Todo[]>(this.baseURL+"?_limit="+limit)
   }
 
   delete(id:number){
     
-    return this.http.delete<Todo[]>("https://jsonplaceholder.typicode.com/todos/"+id)
+    return this.http.delete<Todo[]>(this.baseURL+"/"+id)
   }
   update(todo:Todo){
     
-    return this.http.put("https://jsonplaceholder.typicode.com/todos/"+todo.id,todo)
+    return this.http.put(this.baseURL+"/"+todo.id,todo)
+  }
+  add(todo:Todo):Observable<Todo>{
+    
+    return this.http.post<Todo>(this.baseURL,todo)
   }
 }

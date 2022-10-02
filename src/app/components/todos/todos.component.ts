@@ -60,6 +60,7 @@ export class TodosComponent {
 
 
       this.todos.push(todo)
+      this.resultTodos=this.todos
     // });
     
    
